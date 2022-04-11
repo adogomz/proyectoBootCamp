@@ -4,7 +4,7 @@ const app = express();
 const cors = require("cors");
 /* const urlDb = process.env.MONGO_URI; */
 /* import menus from "./menus"; */
-
+/* funciona base datos local */
 app.listen(3002);
 app.use(cors());
 app.use(express.static("public"));
