@@ -7,13 +7,13 @@
 }
 
 .home,
-.services,
-.equipo,
+/*.services,*/
+/*.equipo,*/
+/*.charlas*/ 
 .contact-us,
 .sign-up,
 .nutricion,
-.entrenador,
-.charlas {
+.entrenador{
   display: flex;
   height: 90vh;
   align-items: center;
@@ -33,7 +33,7 @@
 }
 .padre{
   position: relative; 
-  background-color: aquamarine;
+  /*background-color: aquamarine;*/
 }
 .uno{
   position: absolute;
@@ -49,16 +49,31 @@
   padding: 4px 20px;
 }
 
-
-.services {
+/*
+.service{
   background-image: url('../img/img-2.jpg');
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
   color: #fff;
   font-size: 100px;
-}
+  
+}*/
 
+
+
+
+.card-container {
+  width: 300px;
+  overflow: hidden;
+  box-shadow: 0px 0px 15px -5px;
+}
+.image-container img {
+  overflow: hidden;
+  height: 200px;
+
+}
+/*
 .equipo {
   background-image: url('../img/—Pngtree—fruit\ and\ vegetable\ nutrition\ extraction_1094614.jpg');
   background-position: center;
@@ -66,7 +81,7 @@
   background-repeat: no-repeat;
   color: #fff;
   font-size: 100px;
-}
+}*/
 
 .contact-us {
   background-image: url('../img/img-3.jpg');
@@ -106,11 +121,4 @@
     height: 300px;
 
 }
-.charlas {
-  background-image: url('../img/pexels-kampus-production-5940842.jpg');
-  background-position: bottom;
-  background-size: cover;
-  background-repeat: no-repeat;
-  color: #fff;
-  font-size: 100px
-}
+
