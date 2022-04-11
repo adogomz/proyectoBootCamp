@@ -1,0 +1,116 @@
+* {
+  /* box-sizing: border-box; */
+  margin: 0;
+  padding: 0;
+  font-family: 'PT Sans', sans-serif;
+  
+}
+
+.home,
+.services,
+.equipo,
+.contact-us,
+.sign-up,
+.nutricion,
+.entrenador,
+.charlas {
+  display: flex;
+  height: 90vh;
+  align-items: center;
+  justify-content: center;
+  font-size: 3rem;
+}
+.header{
+  position: absolute;
+}
+
+.home {
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  color: #fff;
+  font-size: 100px;
+}
+.padre{
+  position: relative; 
+  background-color: aquamarine;
+}
+.uno{
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  right: 0px;
+  margin: 0 auto; 
+
+
+}
+.unoTexto{
+  color: #fff;
+  padding: 4px 20px;
+}
+
+
+.services {
+  background-image: url('../img/img-2.jpg');
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  color: #fff;
+  font-size: 100px;
+}
+
+.equipo {
+  background-image: url('../img/—Pngtree—fruit\ and\ vegetable\ nutrition\ extraction_1094614.jpg');
+  background-position: center;
+  background-size: fill;
+  background-repeat: no-repeat;
+  color: #fff;
+  font-size: 100px;
+}
+
+.contact-us {
+  background-image: url('../img/img-3.jpg');
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  color: #fff;
+  font-size: 100px;
+}
+
+.sign-up {
+  background-image: url('../img/img-4.jpg');
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  color: #fff;
+  font-size: 100px;
+}
+
+.nutricion {
+  background-image: url('../img/pexels-yaroslav-shuraev-8844887.jpg');
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  color: #fff;
+  font-size: 100px;
+}
+
+.entrenador {
+  background-image: url('../img/pexels-li-sun-2294361.jpg');
+  background-position: bottom;
+  background-size: cover; 
+  /* background-repeat: no-repeat; */ 
+}
+.imgCuerpos{
+    width: 300px;
+    height: 300px;
+
+}
+.charlas {
+  background-image: url('../img/pexels-kampus-production-5940842.jpg');
+  background-position: bottom;
+  background-size: cover;
+  background-repeat: no-repeat;
+  color: #fff;
+  font-size: 100px
+}

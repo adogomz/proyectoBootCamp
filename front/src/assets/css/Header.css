@@ -1,0 +1,14 @@
+
+.redes{
+    display: flex; 
+    justify-content: flex-end; 
+    padding-left: 50px;
+    background-color: rgb(169, 198, 198);
+}
+
+.facebook{
+    padding: 12px 7px;
+}
+.instagram{
+    padding: 10px 7px;
+}
