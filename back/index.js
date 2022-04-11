@@ -7,7 +7,7 @@ require("dotenv").config();
 const todosMenus = require("./routes/todosMenus");
 const register = require("./routes/register");
 
-app.listen(3003);
+app.listen(3002);
 app.use(cors());
 app.use(express.static("public"));
 app.use(express.urlencoded({ extended: false }));
