@@ -1,18 +1,19 @@
 const express = require("express");
+const mongodb = require("mongodb");
 const router = express.Router();
 
 router.get("/", function (req, res) {
   let db = req.app.locals.db;
   db.collection("menus")
     .find()
-    .toArray(function (err, result) {
+    .toArray(function (err, datos) {
       if (err !== undefined) {
         console.log(err);
       } else {
-        if (result.length > 0) {
-          res.send({ result: result });
+        if (datos.length > 0) {
+          res.send({ datos: datos });
         } else {
-          res.send("err");
+          res.send({ message: "No tienes menus" });
         }
       }
     });

@@ -7,7 +7,7 @@ const todosMenus = require("./routes/todosMenus");
 //const register = require("./routes/register");
 require("dotenv").config();
 
-app.listen(3004);
+app.listen(3002);
 app.use(cors());
 app.use(express.static("public"));
 app.use(express.urlencoded({ extended: false }));
@@ -53,12 +53,10 @@ MongoClient.connect("mongodb://127.0.0.1:27017", function (err, client) {
       }
     });
 });
-
 module.export = app;*/
 
 /* RUTAS */
-// LA LLAMADA A TODOS LOS MENUS TODOS MANGUAN
-
+// LA LLAMADA A TODOS LOS MENUS
 app.use("/menus", todosMenus);
 
 //PARA EL REGISTRO CUANDO LO SAQUE
