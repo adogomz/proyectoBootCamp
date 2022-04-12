@@ -1,6 +1,7 @@
-const express = require("express");
-const router = require("./todosMenus");
-
+/*const express = require("express");
+const router = require("./todosMenus");*/
+//rgistro de users lo desactivo
+/*
 router.post("/", function (req, res) {
   req.app.locals.db
     .collection("users")
@@ -29,8 +30,7 @@ router.post("/", function (req, res) {
       }
     });
 });
-
-module.export = router;
+module.export = router;*/
 
 /* const express = require('express')
 const router = express.Router();

@@ -10,7 +10,7 @@ export default function Menus() {
   let [listaCenas, setListaCenas] = useState();
 
   useEffect(() => {
-    fetch("http://localhost:3002/menus")
+    fetch("http://localhost:3002/todosMenus")
       .then((res) => res.json())
       .then((res) => {
         let ld = res.datos[0].desayuno.map((desayun, index) => {
