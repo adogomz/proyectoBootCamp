@@ -26,6 +26,10 @@ MongoClient.connect(urlDb, function (err, client) {
   }
 });
 
+/* RUTAS */
+// LA LLAMADA A TODOS LOS MENUS
+app.use("/menus", todosMenus);
+
 /* CONEXION A BASE DATOS LOCAL PLAN B DEL PLAN C*/
 
 /*MongoClient.connect("mongodb://127.0.0.1:27017", function (err, client) {
@@ -54,10 +58,6 @@ MongoClient.connect(urlDb, function (err, client) {
     });
 });
 module.export = app;*/
-
-/* RUTAS */
-// LA LLAMADA A TODOS LOS MENUS
-app.use("/menus", todosMenus);
 
 //PARA EL REGISTRO CUANDO LO SAQUE
 //app.use("/registro", register);

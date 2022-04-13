@@ -4,7 +4,8 @@ const router = express.Router();
 
 router.get("/", function (req, res) {
   //let db = req.app.locals.db;
-  db.collection("menus")
+  req.app.locals.db
+    .collection("menus")
     .find()
     .toArray(function (err, datos) {
       if (err !== undefined) {
