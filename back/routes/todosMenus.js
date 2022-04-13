@@ -3,7 +3,7 @@ const mongodb = require("mongodb");
 const router = express.Router();
 
 router.get("/", function (req, res) {
-  let db = req.app.locals.db;
+  //let db = req.app.locals.db;
   db.collection("menus")
     .find()
     .toArray(function (err, datos) {
