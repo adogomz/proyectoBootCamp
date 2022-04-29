@@ -1,0 +1,27 @@
+
+.home {
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    color: #fff;
+    font-size: 100px;
+  }
+  .padre{
+    position:absolute; 
+    /*background-color: aquamarine;*/
+  }
+  .uno{
+    position: relative;
+    top: 0px;
+    left: 0px;
+    right: 0px;
+    margin: 0 auto; 
+  
+  
+  }
+  .unoTexto{
+    position: absolute;  
+    color: #fff;
+    padding: 4px 20px;
+  }
+  

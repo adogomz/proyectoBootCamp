@@ -39,7 +39,7 @@ export default function Menus() {
         let cartaCena = res.datos[0].cena.map((cen, index) => {
           return (
             <div key={index}>
-              {<img src={cen.img} />}
+              <div>{<img src={cen.img} />}</div>
               {cen.nombre}
               {cen.ingredientes}
               {cen.preparacion}

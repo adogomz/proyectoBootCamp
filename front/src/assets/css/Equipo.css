@@ -1,0 +1,77 @@
+.clas{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    background-color: rgb(143, 83, 4);
+    flex-wrap: wrap;
+}
+
+.card {
+    position: relative;
+    width: 300px;
+    height: 400px;
+    background-color: rgb(76, 161, 161);
+    border-radius: 6px;
+    overflow: hidden;
+    margin: 15px 20px;
+}
+
+.card .head{
+    height: 126px;
+    width: 100%;
+    position: relative;
+}
+
+.card .head .circle{
+    position: absolute;
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    background: rgb(239, 189, 108);
+    bottom: 0;
+}
+
+.card .head .img{
+    width: 150px;
+    height: 150px;
+    position: absolute;
+    background: #fff;
+    padding: 5px;
+    border-radius: 50%;
+    bottom: -30%;
+    left: 50%;
+    transform: translate(-50%);
+
+}
+
+.card .head .img img{
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.card .description {
+    height: 200px;
+    padding: 40px 20px 20px 20px;
+    border-bottom: solid 1px rgba(6, 74, 76, .18);
+    text-align: center;
+}
+.card .description h2, h3, p{
+    color: bisque
+}
+
+.card .description p{
+    margin-top: 20px;
+    font-size: 15px;
+}
+
+.card .contact{
+    width: 100%;
+    height: 75px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+

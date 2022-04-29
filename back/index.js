@@ -1,20 +1,23 @@
+require("dotenv").config();
 const express = require("express");
 const mongodb = require("mongodb");
+const bycrypt = require("bcrypt");
 const app = express();
 const cors = require("cors");
-/* const urlDb = process.env.MONGO_URI; */
-/* import menus from "./menus"; */
-/* funciona base datos local */
-app.listen(3002);
+const urlDb = process.env.MONGO_URI;
+const login = require("./routes/login.routes");
+
+app.listen(3000);
 app.use(cors());
+
 app.use(express.static("public"));
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
-/* process.env.MONGO_URI */
 
 let MongoClient = mongodb.MongoClient;
 let db;
 
+// conexion base datos local
 MongoClient.connect("mongodb://127.0.0.1:27017", function (err, client) {
   if (err !== undefined) {
     console.log(err);
@@ -23,6 +26,18 @@ MongoClient.connect("mongodb://127.0.0.1:27017", function (err, client) {
     console.log("conectado a la base datos local");
   }
 });
+
+/*
+// Conexion a remoto 
+MongoClient.connect(urlDb, function (err, client) {
+  if (err !== undefined) {
+    console.log(err);
+  } else {
+    app.locals.db = client.db("api_nutri");
+    console.log("Conectado a la base datos remota");
+  }
+});
+*/
 
 app.get("/menus", function (req, res) {
   db.collection("menus")

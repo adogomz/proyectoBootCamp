@@ -1,0 +1,12 @@
+.charlas {
+    background-image: url('../img/pexels-kampus-production-5940842.jpg');
+    background-position: bottom;
+    background-size: cover;
+    background-repeat: no-repeat;
+    color: #fff;
+    font-size: 100px
+  }
+
+  .contenedor_title{
+    text-align: center;
+  }
