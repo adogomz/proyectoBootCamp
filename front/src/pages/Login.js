@@ -3,18 +3,16 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { useState, useEffect } from "react";
 
-function SingUp() {
-  const [registrar, setRegistrar] = useState(false);
+function Login() {
+  const [entrar, setEntrar] = useState(false);
   const [username, setUsername] = useState("");
-  const [mail, setMail] = useState("");
   const [password, setPassword] = useState("");
   const [mensaje, setMensaje] = useState("");
 
   useEffect(() => {
-    if (registrar == true) {
+    if (entrar == true) {
       let body = {
         username,
-        mail,
         password,
       };
 
@@ -26,7 +24,7 @@ function SingUp() {
         body: JSON.stringify(body),
       };
 
-      fetch("http://localhost:3002/registro", data)
+      fetch("http://localhost:3002/login", data)
         .then((res) => {
           return res.json();
         })
@@ -35,13 +33,12 @@ function SingUp() {
           setMensaje(res.mensaje);
         });
     }
-  }, [registrar]);
-
+  }, [entrar]);
   return (
     <div className="padre-user">
       <div className="campo-usuario">
         <div className="titulo-usuario">
-          <h1>Acceso usuario</h1>
+          <h1>Iniciar Sesión</h1>
         </div>
         <div className="usuario">
           <input
@@ -52,13 +49,6 @@ function SingUp() {
             placeholder="Usuario"
           />
           <input
-            className="mail"
-            value={mail}
-            onChange={(e) => setMail(e.target.value)}
-            type="text"
-            placeholder="mail"
-          />
-          <input
             className="contraseña"
             value={password}
             onChange={(e) => setPassword(e.target.value)}
@@ -67,13 +57,13 @@ function SingUp() {
           />
         </div>
         <div className="boton-subir">
-          <button onClick={() => setRegistrar(true)}>Acceso</button>
+          <button onClick={() => setEntrar(true)}>Registrarse</button>
           <p>{mensaje}</p>
         </div>
         <div className="nuevo-regristro">
           <p>
-            <Link className="registro" to="/">
-              Iniciar Sesión
+            <Link className="registro" to="/registro">
+              Crear cuenta nueva
             </Link>
           </p>
         </div>
@@ -82,4 +72,4 @@ function SingUp() {
   );
 }
 
-export default SingUp;
+export default Login;

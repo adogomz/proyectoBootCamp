@@ -5,9 +5,10 @@ const bycrypt = require("bcrypt");
 const app = express();
 const cors = require("cors");
 const urlDb = process.env.MONGO_URI;
+const registro = require("./routes/registro.routes");
 const login = require("./routes/login.routes");
-
-app.listen(3000);
+const menus = require("./routes/menus.routes");
+app.listen(3002);
 app.use(cors());
 
 app.use(express.static("public"));
@@ -22,10 +23,15 @@ MongoClient.connect("mongodb://127.0.0.1:27017", function (err, client) {
   if (err !== undefined) {
     console.log(err);
   } else {
-    db = client.db("menu");
+    app.locals.db = client.db("menu");
     console.log("conectado a la base datos local");
   }
 });
+
+//rutas
+app.use("/registro", registro);
+app.use("/login", login);
+app.use("/menus", menus);
 
 /*
 // Conexion a remoto 
@@ -38,21 +44,3 @@ MongoClient.connect(urlDb, function (err, client) {
   }
 });
 */
-
-app.get("/menus", function (req, res) {
-  db.collection("menus")
-    .find()
-    .toArray(function (err, datos) {
-      if (err !== undefined) {
-        console.log(err);
-      } else {
-        if (datos.length > 0) {
-          res.send({ datos: datos });
-        } else {
-          res.send({ message: "No tienes ningun menu" });
-        }
-      }
-    });
-});
-
-module.export = app;

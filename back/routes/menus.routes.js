@@ -1,9 +1,11 @@
 const express = require("express");
 const mongodb = require("mongodb");
+const bcrypt = require("bcrypt");
 const router = express.Router();
 
-/* app.get("/menus", function (req, res) {
-  db.collection("menus")
+router.get("/", function (req, res) {
+  req.app.locals.db
+    .collection("menus")
     .find()
     .toArray(function (err, datos) {
       if (err !== undefined) {
@@ -16,6 +18,6 @@ const router = express.Router();
         }
       }
     });
-}); 
+});
 
-module.export = app; */
+module.exports = router;

@@ -2,6 +2,7 @@ const express = require("express");
 const mongodb = require("mongodb");
 const bcrypt = require("bcrypt");
 const router = express.Router();
+// const app = express();
 // app.use(express.json());
 // app.listen(3002);
 
@@ -19,25 +20,22 @@ const router = express.Router();
 
 router.post("/", function (req, res) {
   let username = req.body.username;
+  let mail = req.body.mail;
   let password = req.body.password;
+  let cifrado = bcrypt.hashSync(password, 11);
+
   req.app.locals.db
     .collection("users")
-    .find({ username: username })
-    .toArray(function (err, arrayUsuario) {
-      if (err !== undefined) {
-        res.send({ mensaje: "No a funcionado" });
-      } else {
-        if (arrayUsuario.length > 0) {
-          if (bcrypt.compareSync(password, arrayUsuario[0].password)) {
-            res.send({ mensaje: "Todo Ok todo coincide" });
-          } else {
-            res.send({ mensaje: "contraseña incorrecta" });
-          }
+    .insertOne(
+      { username: username, mail: mail, password: cifrado },
+      function (err, result) {
+        if (err !== undefined) {
+          res.send({ mensaje: "Error en el registro" });
         } else {
-          res.send({ mensaje: "No estar registrado" });
+          res.send({ mensaje: "OK usuario registrado" });
         }
       }
-    });
+    );
 });
 
 module.exports = router;

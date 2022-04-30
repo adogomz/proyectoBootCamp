@@ -3,7 +3,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import { useState, useEffect } from "react";
 
-function SingUp() {
+function Registro() {
   const [registrar, setRegistrar] = useState(false);
   const [username, setUsername] = useState("");
   const [mail, setMail] = useState("");
@@ -26,7 +26,7 @@ function SingUp() {
         body: JSON.stringify(body),
       };
 
-      fetch("http://localhost:3002/registro", data)
+      fetch("http://localhost:3000/registro", data)
         .then((res) => {
           return res.json();
         })
@@ -41,7 +41,7 @@ function SingUp() {
     <div className="padre-user">
       <div className="campo-usuario">
         <div className="titulo-usuario">
-          <h1>Acceso usuario</h1>
+          <h1>Crear Usuario</h1>
         </div>
         <div className="usuario">
           <input
@@ -67,7 +67,7 @@ function SingUp() {
           />
         </div>
         <div className="boton-subir">
-          <button onClick={() => setRegistrar(true)}>Acceso</button>
+          <button onClick={() => setRegistrar(true)}>Registrarse</button>
           <p>{mensaje}</p>
         </div>
         <div className="nuevo-regristro">
@@ -82,4 +82,4 @@ function SingUp() {
   );
 }
 
-export default SingUp;
+export default Registro;
