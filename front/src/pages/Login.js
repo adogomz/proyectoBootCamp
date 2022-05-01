@@ -35,14 +35,14 @@ function Login() {
     }
   }, [entrar]);
   return (
-    <div className="padre-user">
-      <div className="campo-usuario">
-        <div className="titulo-usuario">
+    <div className="">
+      <div className="">
+        <div className="">
           <h1>Iniciar Sesión</h1>
         </div>
-        <div className="usuario">
+        <div className="">
           <input
-            className="nombre-user"
+            className=""
             value={username}
             onChange={(e) => setUsername(e.target.value)}
             type="text"
@@ -56,11 +56,11 @@ function Login() {
             placeholder="Contraseña"
           />
         </div>
-        <div className="boton-subir">
+        <div className="">
           <button onClick={() => setEntrar(true)}>Registrarse</button>
           <p>{mensaje}</p>
         </div>
-        <div className="nuevo-regristro">
+        <div className="">
           <p>
             <Link className="registro" to="/registro">
               Crear cuenta nueva

@@ -18,9 +18,11 @@ export default function Menus() {
           return (
             <div key={index}>
               {<img src={desayun.img} />}
-              {desayun.nombre}
-              {desayun.ingredientes}
-              {desayun.preparacion}
+              <div>
+                <h4>{desayun.nombre}</h4>
+                {desayun.ingredientes}
+                {desayun.preparacion}
+              </div>
             </div>
           );
         });

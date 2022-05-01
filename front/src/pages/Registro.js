@@ -26,7 +26,7 @@ function Registro() {
         body: JSON.stringify(body),
       };
 
-      fetch("http://localhost:3000/registro", data)
+      fetch("http://localhost:3002/registro", data)
         .then((res) => {
           return res.json();
         })
@@ -38,41 +38,41 @@ function Registro() {
   }, [registrar]);
 
   return (
-    <div className="padre-user">
-      <div className="campo-usuario">
-        <div className="titulo-usuario">
+    <div className="">
+      <div className="">
+        <div className="">
           <h1>Crear Usuario</h1>
         </div>
-        <div className="usuario">
+        <div className="">
           <input
-            className="nombre-user"
+            className=""
             value={username}
             onChange={(e) => setUsername(e.target.value)}
             type="text"
             placeholder="Usuario"
           />
           <input
-            className="mail"
+            className=""
             value={mail}
             onChange={(e) => setMail(e.target.value)}
             type="text"
             placeholder="mail"
           />
           <input
-            className="contraseña"
+            className=""
             value={password}
             onChange={(e) => setPassword(e.target.value)}
             type="password"
             placeholder="Contraseña"
           />
         </div>
-        <div className="boton-subir">
+        <div className="">
           <button onClick={() => setRegistrar(true)}>Registrarse</button>
           <p>{mensaje}</p>
         </div>
         <div className="nuevo-regristro">
           <p>
-            <Link className="registro" to="/">
+            <Link className="" to="/">
               Iniciar Sesión
             </Link>
           </p>

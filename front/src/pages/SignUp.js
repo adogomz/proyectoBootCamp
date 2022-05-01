@@ -1,20 +1,19 @@
 import React from "react";
+import registro from "../pages/Registro";
 
 import { Link } from "react-router-dom";
 import { useState, useEffect } from "react";
 
 function SingUp() {
-  const [registrar, setRegistrar] = useState(false);
+  const [entrar, setEntrar] = useState(false);
   const [username, setUsername] = useState("");
-  const [mail, setMail] = useState("");
   const [password, setPassword] = useState("");
   const [mensaje, setMensaje] = useState("");
 
   useEffect(() => {
-    if (registrar == true) {
+    if (entrar == true) {
       let body = {
         username,
-        mail,
         password,
       };
 
@@ -26,7 +25,7 @@ function SingUp() {
         body: JSON.stringify(body),
       };
 
-      fetch("http://localhost:3002/registro", data)
+      fetch("http://localhost:3002/login", data)
         .then((res) => {
           return res.json();
         })
@@ -35,45 +34,37 @@ function SingUp() {
           setMensaje(res.mensaje);
         });
     }
-  }, [registrar]);
-
+  }, [entrar]);
   return (
-    <div className="padre-user">
-      <div className="campo-usuario">
-        <div className="titulo-usuario">
-          <h1>Acceso usuario</h1>
+    <div className="">
+      <div className="">
+        <div className="">
+          <h1>Iniciar Sesión</h1>
         </div>
-        <div className="usuario">
+        <div className="">
           <input
-            className="nombre-user"
+            className=""
             value={username}
             onChange={(e) => setUsername(e.target.value)}
             type="text"
             placeholder="Usuario"
           />
           <input
-            className="mail"
-            value={mail}
-            onChange={(e) => setMail(e.target.value)}
-            type="text"
-            placeholder="mail"
-          />
-          <input
-            className="contraseña"
+            className=""
             value={password}
             onChange={(e) => setPassword(e.target.value)}
             type="password"
             placeholder="Contraseña"
           />
         </div>
-        <div className="boton-subir">
-          <button onClick={() => setRegistrar(true)}>Acceso</button>
+        <div className="">
+          <button onClick={() => setEntrar(true)}>Entrar</button>
           <p>{mensaje}</p>
         </div>
-        <div className="nuevo-regristro">
+        <div className="">
           <p>
-            <Link className="registro" to="/">
-              Iniciar Sesión
+            <Link to="/registro" className="">
+              Crear cuenta
             </Link>
           </p>
         </div>

@@ -11,6 +11,7 @@ import Nutricion from "../pages/Nutricion";
 import Entrenador from "../pages/Entrenador";
 import Charlas from "../pages/Charlas";
 import Menus from "../pages/Menus";
+import Registro from "../pages/Registro";
 
 function App() {
   return (
@@ -26,6 +27,7 @@ function App() {
           <Route exact path="/entrenador" element={<Entrenador />}></Route>
           <Route exact path="/charlas" element={<Charlas />}></Route>
           <Route exact path="/menus" element={<Menus />}></Route>
+          <Route exact path="/registro" element={<Registro />}></Route>
         </Routes>
       </Layout>
     </BrowserRouter>
