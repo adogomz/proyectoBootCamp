@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-
+import "../assets/css/Menus.css";
 export default function Menus() {
   let [menus, setMenus] = useState([]);
   let [desayunos, setDesayuno] = useState([]);
@@ -17,10 +17,12 @@ export default function Menus() {
           console.log(desayun);
           return (
             <div key={index}>
-              {<img src={desayun.img} />}
               <div>
-                <h4>{desayun.nombre}</h4>
-                {desayun.ingredientes}
+                <div className="item1">{<img src={desayun.img} />}</div>
+                <div className="item2">
+                  <h4>{desayun.nombre}</h4>
+                </div>
+                <div className="item3">{desayun.ingredientes}</div>
                 {desayun.preparacion}
               </div>
             </div>
@@ -30,10 +32,12 @@ export default function Menus() {
         let cartaComida = res.datos[0].comida.map((comid, index) => {
           return (
             <div key={index}>
-              {<img src={comid.img} />}
-              {comid.nombre}
-              {comid.ingredientes}
-              {comid.preparacion}
+              <div className="container">
+                {<img src={comid.img} />}
+                {comid.nombre}
+                {comid.ingredientes}
+                {comid.preparacion}
+              </div>
             </div>
           );
         });

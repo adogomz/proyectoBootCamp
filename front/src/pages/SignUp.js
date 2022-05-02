@@ -1,8 +1,11 @@
 import React from "react";
 import registro from "../pages/Registro";
-
+import "../assets/css/SingUp.css";
 import { Link } from "react-router-dom";
 import { useState, useEffect } from "react";
+import sobre from "../assets/icons/email.jpg";
+import candado from "../assets/icons/pass.png";
+import profile from "../assets/icons/a.png";
 
 function SingUp() {
   const [entrar, setEntrar] = useState(false);
@@ -16,7 +19,7 @@ function SingUp() {
         username,
         password,
       };
-
+      console.log("hola");
       console.log(body);
 
       let data = {
@@ -32,44 +35,63 @@ function SingUp() {
         .then((res) => {
           console.log(res);
           setMensaje(res.mensaje);
+          if (res.mensaje.indexOf("Ok") != -1) {
+            window.location.href = "http://localhost:3000/menus";
+          }
         });
     }
   }, [entrar]);
   return (
-    <div className="">
-      <div className="">
-        <div className="">
-          <h1>Iniciar Sesión</h1>
-        </div>
-        <div className="">
-          <input
-            className=""
-            value={username}
-            onChange={(e) => setUsername(e.target.value)}
-            type="text"
-            placeholder="Usuario"
-          />
-          <input
-            className=""
-            value={password}
-            onChange={(e) => setPassword(e.target.value)}
-            type="password"
-            placeholder="Contraseña"
-          />
-        </div>
-        <div className="">
-          <button onClick={() => setEntrar(true)}>Entrar</button>
-          <p>{mensaje}</p>
-        </div>
-        <div className="">
-          <p>
-            <Link to="/registro" className="">
-              Crear cuenta
-            </Link>
-          </p>
+    <>
+      {/* //ddd esta es la que hecho yo */}
+      <div className="main">
+        <div className="sub-main">
+          <div>
+            <div className="imgs">
+              <div className="container-image">
+                <img src={profile} alt="profile" className="profile" />
+              </div>
+            </div>
+            <div>
+              <h1>Inicio de sesion</h1>
+              <div>
+                <img src={sobre} alt="email" className="email" />
+                <input
+                  type="text"
+                  placeholder="nombre de usuario"
+                  className="name"
+                  value={username}
+                  onChange={(e) => setUsername(e.target.value)}
+                />
+              </div>
+              <div className="second-input">
+                <img src={candado} alt="pass" className="email" />
+                <input
+                  type="password"
+                  value={password}
+                  onChange={(e) => setPassword(e.target.value)}
+                  placeholder="contraseña"
+                  className="name"
+                />
+              </div>
+              <div className="login-button">
+                <button onClick={() => setEntrar(true)}>Entrar</button>
+                <div>
+                  <p className="black">{mensaje}</p>
+                </div>
+              </div>
+
+              <p className="link">
+                <a href="#">Recuperar clave</a>
+                <Link to="/registro" className="link">
+                  Crear cuenta
+                </Link>
+              </p>
+            </div>
+          </div>
         </div>
       </div>
-    </div>
+    </>
   );
 }
 
