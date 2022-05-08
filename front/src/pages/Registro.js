@@ -48,17 +48,13 @@ function Registro() {
             <div>
               <h1>Registro de usuario</h1>
               <div>
-                <img
-                  src={profile}
-                  alt="username"
-                  className="email"
-                  value={username}
-                  onChange={(e) => setUsername(e.target.value)}
-                />
+                <img src={profile} alt="username" className="email" />
                 <input
                   type="text"
                   placeholder="nombre de usuario"
                   className="name"
+                  value={username}
+                  onChange={(e) => setUsername(e.target.value)}
                 />
               </div>
               <div className="second-input">
